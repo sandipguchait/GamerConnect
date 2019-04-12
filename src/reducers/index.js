@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 const initialUserState = {
     currentUser: null,
-    isloading: true
+    isLoading: true
 }
 
 const user_reducer = ( state = initialUserState, action ) => {
@@ -10,7 +10,7 @@ const user_reducer = ( state = initialUserState, action ) => {
         case 'SET_USER':
             return {
                 currentuser: action.payload.currentUser,
-                isloading: false
+                isLoading: false
             }
         default:
             return state;
@@ -18,8 +18,8 @@ const user_reducer = ( state = initialUserState, action ) => {
 }
 
 
-const RootReducer = combineReducers({
+const rootReducer = combineReducers({
     user: user_reducer
 })
 
-export default RootReducer;
+export default rootReducer;
