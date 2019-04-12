@@ -141,8 +141,8 @@ class Register extends Component {
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h1" icon color="blue" textAlign="center">
-            <Icon name="gamepad" color="blue" />
+          <Header as="h1" icon color="violet" textAlign="center">
+            <Icon name="gamepad" color="violet" />
             Register for GamerConnect
           </Header>
           <Form size="large" onSubmit={this.handleSubmit}>
@@ -195,7 +195,7 @@ class Register extends Component {
               />
 
               <Button disabled={loading} className={ loading ? 'loading': ''} 
-                color="blue" fluid size="large" >
+                color="violet" fluid size="large" >
                 Submit
               </Button>
             </Segment>
