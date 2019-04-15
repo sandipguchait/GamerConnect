@@ -1,3 +1,5 @@
+
+// USER ACTIONSSSS
 // action to get the Current User
 export const setUser = user => {
     return {
@@ -12,5 +14,16 @@ export const setUser = user => {
 export const clearUser = () => {
     return {
         type: 'CLEAR_USER'
+    }
+}
+
+//CHANNEL ACTIONS +++++++
+//change Channel action 
+export const setCurrentChannel = ( channel ) => {
+    return {
+        type: 'SET_CURRENT_CHANNEL',
+        payload: {
+            currentChannel: channel
+        }
     }
 }

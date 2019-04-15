@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { Grid, GridColumn } from 'semantic-ui-react';
 import { connect } from 'react-redux';
