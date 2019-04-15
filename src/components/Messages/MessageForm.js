@@ -78,7 +78,7 @@ class Messageform extends Component {
                     <Button 
                        onClick={this.sendMessage}
                        color="orange"
-                       content="Add Reply"
+                       content="Send Message"
                        labelPosition="left"
                        icon="edit"
                     />
