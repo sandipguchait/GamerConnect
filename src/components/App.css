@@ -1,14 +1,13 @@
 html,
 body,
 .app {
-    margin-top: 10px;
     background: #ECF0F1;
     padding: 1em;
 }
 
 /* messages.js */
 .messages {
-    height: 440px;
+    height: 360px;
     overflow-y: scroll;
 }
 
@@ -28,4 +27,14 @@ body,
 .message__self {
     border-left: 2px solid orange;
     padding-left: 8px;
+}
+
+/* Message image display */
+.message__image {
+    padding: 1em;
+}
+
+/* progreesbar */
+.progress__bar {
+    margin: 0.3em 0 0 0 !important;
 }
