@@ -15,7 +15,7 @@ class Messages extends Component {
         channel: this.props.currentChannel,
         user: this.props.currentUser
     }
-
+    
     componentDidMount(){
         const { channel,user } = this.state;
 
