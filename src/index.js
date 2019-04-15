@@ -21,9 +21,8 @@ const store = createStore( rootReducer , composeWithDevTools());
 
 class Root extends React.Component {
 
-    //Checking Whether we have an user on the app so will be redirected automatically to APP
+    //IF user is Logged In then automatically user is redirected to APP component 
     componentDidMount(){
-        console.log(this.props.isLoading)
         firebase.auth().onAuthStateChanged(user => {
             if(user){
                 this.props.setUser(user)
@@ -31,6 +30,7 @@ class Root extends React.Component {
             }
         })
     }
+
     render(){
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
