@@ -101,7 +101,7 @@ class Channels extends Component {
                key={channel.id}
                onClick={()=>this.changeChannel(channel)}
                name={channel.name}
-               style={{ opacity: 0.7 }}
+               style={{ opacity: 2}}
                active={channel.id === this.state.activeChannel}
             >
                 # {channel.name}
