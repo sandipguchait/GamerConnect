@@ -7,3 +7,10 @@ export const setUser = user => {
         }
     }
 }
+
+//Clear User on SIGNOUT
+export const clearUser = () => {
+    return {
+        type: 'CLEAR_USER'
+    }
+}
