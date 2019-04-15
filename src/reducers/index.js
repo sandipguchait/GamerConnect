@@ -9,13 +9,19 @@ const user_reducer = ( state = initialUserState, action ) => {
     switch(action.type){
         case 'SET_USER':
             return {
-                currentuser: action.payload.currentUser,
+                currentUser: action.payload.currentUser,
+                isLoading: false
+            }
+        case 'CLEAR_USER':
+            return {
+                ...initialUserState,
                 isLoading: false
             }
         default:
             return state;
     }
 }
+
 
 
 const rootReducer = combineReducers({
