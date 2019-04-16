@@ -74,6 +74,7 @@ class Messageform extends Component {
         }
     };
 
+    // Uploading File settings/ configuration
     uploadFile = (file, metadata) => {
         const pathToUpload  = this.state.channel.id;
         const ref = this.props.messageRef;
@@ -152,6 +153,7 @@ class Messageform extends Component {
                     <Button.Or text='OR' />
                     <Button 
                         color="teal"
+                        disabled={uploadState === 'uploading'}
                         onClick={this.openModal}
                         content="Upload Media"
                         labelPosition="right"
