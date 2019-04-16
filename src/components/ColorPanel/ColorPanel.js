@@ -8,6 +8,7 @@ class ColorPanel extends Component {
         return (
             <Sidebar
                 as={Menu}
+                color="violet"
                 icon="labeled"
                 inverted
                 vertical
@@ -15,7 +16,7 @@ class ColorPanel extends Component {
                 width="very thin"
             >
             <Divider/>
-            <Button icon="add" size="small" color="violet" />
+            <Button icon="add" size="small" color="black" />
             </Sidebar>
         );
     }

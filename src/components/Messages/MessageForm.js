@@ -47,13 +47,13 @@ class Messageform extends Component {
     }
 
     sendMessage = () => {
-        const { messageRef } = this.props;
+        const { getMessagesRef } = this.props;
         const { message, channel } = this.state;
 
         if(message) {
             this.setState({ loading: true })
             //send message to database
-            messageRef
+            getMessagesRef()
                 .child(channel.id)
                 .push()
                 .set(this.createMessage())
@@ -74,11 +74,19 @@ class Messageform extends Component {
         }
     };
 
+    getPath = () => {
+        if(this.props.isPrivateChannel){
+            return `chat/private-${this.state.channel.id}`
+        } else {
+            return 'chat/public'
+        }
+    }
+
     // Uploading File settings/ configuration
     uploadFile = (file, metadata) => {
         const pathToUpload  = this.state.channel.id;
-        const ref = this.props.messageRef;
-        const filepath =`chat/public/${uuidv4()}.jpg`;
+        const ref = this.props.getMessagesRef();
+        const filepath =`${this.getPath()}/${uuidv4()}.jpg`;
 
         this.setState({
             uploadState: 'uploading',
