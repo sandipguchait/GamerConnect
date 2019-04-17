@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import UserPanel from './UserPanel';
 import Channels from './Channels';
 import DirectMessages from './DirectMessages';
+import Starred from './Starred';
 
 class Sidepanel extends Component {
 
@@ -19,6 +20,7 @@ class Sidepanel extends Component {
                 <UserPanel currentUser={currentUser} />
                 <Channels currentUser={currentUser} />
                 <DirectMessages currentUser={currentUser}/>
+                <Starred />
             </Menu>
         );
     }
