@@ -1,45 +1,63 @@
 html,
 body,
 .app {
-    background: #ECF0F1;
-    padding: 1em;
+  height: 99vh;
+  background: #eee;
+  padding: 0.5em;
 }
 
-/* messages.js */
-.messages {
-    height: 360px;
-    overflow-y: scroll;
-}
-
-/* MessageForm.js  */
-
-.message__form {
-    position: fixed !important;
-    bottom: 1em;
-    margin-left: 320px !important;
-    left: 0;
-    right: 1em;
-    z-index: 200;
-}
-
-/* sidepanel.js */
+/* SidePanel.js */
 .menu {
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
-/* MessageDisplay.js */
+/* Messages.js */
+.messages {
+  height: 58vh;
+  overflow-y: scroll;
+}
 
+/* MessageForm.js */
+.message__form {
+  position: fixed !important;
+  bottom: 0.5em;
+  margin-left: 320px !important;
+  left: 0;
+  right: 0.5em;
+  z-index: 200;
+}
+
+/* Message.js */
 .message__self {
-    border-left: 2px solid orange;
-    padding-left: 8px;
+  border-left: 2px solid orange;
+  padding-left: 8px;
 }
 
-/* Message image display */
 .message__image {
-    padding: 1em;
+  padding: 1em;
 }
 
-/* progreesbar */
+/* ProgressBar.js */
 .progress__bar {
-    margin: 0.3em 0 0 0 !important;
+  margin: 0.3em 0 0 0 !important;
+}
+
+/* ColorPanel.js */
+.color__container {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 35px;
+  border-radius: 3px;
+}
+
+.color__square {
+  width: 35px;
+  height: 35px;
+}
+
+.color__overlay {
+  width: 85px;
+  height: 35px;
+  transform: rotate(225deg);
 }
