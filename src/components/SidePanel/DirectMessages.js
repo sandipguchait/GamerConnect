@@ -117,7 +117,7 @@ class DirectMessages extends Component {
                         <Icon
                             name="circle"
                             style={{ opacity: 0.7 }}
-                            color={this.isUserOnline(user) ? 'green' : 'white'}
+                            color={this.isUserOnline(user) ? 'yellow' : 'red'}
                         />
                         @{user.name}
                     </Menu.Item>
