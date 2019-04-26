@@ -8,12 +8,14 @@ class Channels extends Component {
 
     state = {
         user: this.props.currentUser,
+        channel: null,
         activeChannel: '',
         channels: [],
         channelName: '',
         channelDetails: '',
         channelsRef: firebase.database().ref('channels'),
         messagesRef: firebase.database().ref('messages'),
+        typingRef: firebase.database().ref('typing'),
         notifications: [],
         modal: false,
     }
@@ -164,6 +166,10 @@ class Channels extends Component {
     //SET CHANNEL TO GLOBAL STATE
     changeChannel = channel => {
          this.setActivechannel(channel);
+         this.state.typingRef
+            .child(this.state.channel.id)
+            .child(this.state.user.uid)
+            .remove();
          this.props.setCurrentChannel(channel);
          this.clearNotification();
          this.props.setPrivateChannel(false);

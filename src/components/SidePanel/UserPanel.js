@@ -40,7 +40,7 @@ class UserPanel extends Component {
             })
 
         }
-    }
+    };
 
     dropdownOptions = () => [
         {
@@ -92,15 +92,13 @@ class UserPanel extends Component {
             })
      };
 
+     //UPDATING AVATAR AFTER IMAGE UPLOAD
      changeAvatar = () => {
          this.state.userRef
             .updateProfile({
                 photoURL: this.state.uploadCroppedImage
             })
-            .then(() => {
-                console.log('Photourl updated');
-                this.closeModal();
-            })
+            .then(() => this.closeModal())
             .catch(err => {
                 console.log(err);
             })
