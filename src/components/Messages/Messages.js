@@ -33,6 +33,7 @@ class Messages extends Component {
         if( channel && user ) {
             this.addListeners(channel.id)
             this.addUserStarsListener(channel.id, user.uid)
+            
         }
     }
 
