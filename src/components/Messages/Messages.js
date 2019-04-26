@@ -5,6 +5,7 @@ import MessagesHeader from './MessagesHeader';
 import MessageForm from './MessageForm';
 import Message from './Message';
 import firebase from '../../firebase';
+import Typing from './Typing';
 
 import { connect } from 'react-redux';
 import { setUserPosts } from '../../actions/index';
@@ -193,7 +194,12 @@ class Messages extends Component {
                 <Segment>
                     <Comment.Group className="messages">
                     {/* MESSAGES DISPLAYS HERE */}
-                    {searchTerm ? this.displayMessage(searchResults) : this.displayMessage(messages)}
+                    {searchTerm ? 
+                        this.displayMessage(searchResults) 
+                        : this.displayMessage(messages)}
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <span className="user__typing">cryff is typing</span> <Typing/>
+                        </div>
                     </Comment.Group>
                 </Segment>
 
