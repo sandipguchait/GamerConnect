@@ -19,6 +19,10 @@ class Starred extends Component {
         }
     };
 
+    componentWillUnmount(){
+        this.state.usersRef.child(`${this.state.user.uid}/starred`).off();
+    }
+
     addListeners = (userId) => {
         // Update when channel is starred
         this.state.usersRef

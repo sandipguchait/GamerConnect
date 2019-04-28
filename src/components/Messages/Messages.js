@@ -28,7 +28,7 @@ class Messages extends Component {
         searchResults: [],
         typingRef: firebase.database().ref('typing'),
         connectedRef: firebase.database().ref('.info/connected'),
-        typingUsers: []
+        typingUsers: [],
     }
     
     componentDidMount(){
@@ -39,6 +39,16 @@ class Messages extends Component {
             this.addUserStarsListener(channel.id, user.uid)
             
         }
+    };
+
+    componentDidUpdate(prevProps, prevState){
+        if(this.messagesEnd) {
+            this.scrollToBottom();
+        }
+    };
+
+    scrollToBottom = () => {
+        this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
     }
 
     addUserStarsListener = (channelId, userId) => {
@@ -253,6 +263,7 @@ class Messages extends Component {
                         this.displayMessage(searchResults) 
                         : this.displayMessage(messages)}
                         {this.displayTypingUsers(typingUsers)}
+                        <div ref={node => (this.messagesEnd = node )}></div>
                     </Comment.Group>
                 </Segment>
 
